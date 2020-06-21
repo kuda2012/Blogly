@@ -1,0 +1,39 @@
+{% extends 'base.html'%} {% block title%}User Details{%endblock%} {% block
+content %}
+<div id="user_page">
+  <img src="{{user.image_url}}" alt="user_pic" id="user_image" />
+  <div id="name_and_icons">
+    <h1>{{user.first_name}} {{user.last_name}}</h1>
+    <div id="icons_div">
+      <form action="/users/{{user.id}}/edit" class="icons">
+        <input type="submit" value="Edit Profile" />
+      </form>
+      <form action="/users/{{user.id}}/delete" class="icons" method="POST">
+        <input type="submit" value="Delete Profile" />
+      </form>
+      <form action="/users">
+        <input
+          type="submit"
+          id="allUsers"
+          value="View All Users"
+          class="icons"
+        />
+      </form>
+      <form action="/tags">
+        <input type="submit" id="allTags" value="View Tags" class="icons" />
+      </form>
+    </div>
+    <h1>Posts</h1>
+    {% for post in posts %}
+    <ul>
+      <a href="/posts/{{post.id}}"><li>{{post.title}}</li></a>
+    </ul>
+    {%endfor%}
+    <form action="/users/{{user.id}}/posts/new">
+      <div id="addPostDiv">
+        <input type="submit" value="Create New Post" />
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,134 @@
+#addUsers,
+#editUsers,
+#editPost {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+#addTag {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+input[type="text"] {
+  margin: 8px 0px;
+}
+
+#editUserDiv {
+  display: flex;
+  flex-direction: row-reverse;
+}
+#editUserButton {
+  width: 20%;
+}
+#user_page {
+  display: flex;
+  flex-direction: row;
+}
+#user_image {
+  width: 200px;
+  height: 200px;
+}
+#name_and_icons {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+#icons_div {
+  display: flex;
+  flex-direction: row;
+}
+.icons {
+  margin: 5px;
+}
+#createPost {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+#title_input {
+  width: 40%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 5px 5px;
+}
+#content {
+  width: 70%;
+  height: 300px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+#post_submit_div {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 75%;
+}
+
+#tag_submit_div {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#cancelPost {
+  position: relative;
+  top: -20.5px;
+  left: 370px;
+}
+
+#cancelTag {
+  position: relative;
+  top: -20.5px;
+  left: 200px;
+}
+#cancelEditPost {
+  position: relative;
+  top: -20.5px;
+  left: 195px;
+}
+#cancelEditUser {
+  position: relative;
+  top: -20.5px;
+  left: 3px;
+}
+#addPostDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.post_content {
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+#show_post_buttons {
+  display: flex;
+  width: 20%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#edit_delete_tags {
+  width: 14%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#tagsListed {
+  width: 17%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

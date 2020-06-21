@@ -1,0 +1,19 @@
+{% extends 'base.html'%} {% block title%}Create Tag{%endblock%} {% block content
+%}
+<h1>Create Tag</h1>
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in
+messages %}
+<h3>{{message}}</h3>
+{% endfor %} {% endif %} {% endwith %}
+<form action="/tags/new" method="POST" id="addTag">
+  <label for="tag_name">Name</label>
+  <input type="text" name="tag_name" />
+  <div id="tag_submit_div">
+    <input type="submit" value="Add Tag" id="post_submit" />
+  </div>
+</form>
+<form action="/tags">
+  <input type="submit" id="cancelTag" value="Cancel" />
+</form>
+
+{% endblock %}

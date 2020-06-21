@@ -1,0 +1,42 @@
+{% extends 'base.html'%} {% block title%}Create Post{%endblock%} {% block
+content %}
+
+<h1>Add Post for {{user.first_name}} {{user.last_name}}</h1>
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in
+messages %}
+<h3>{{message}}</h3>
+{% endfor %} {% endif %} {% endwith %}
+<div id="createPost">
+  <form action="/users/{{user.id}}/posts/new" method="POST">
+    <label for="title" class="title">Title</label>
+    <input type="text" name="title" class="title" id="title_input" />
+    <label for="post_content" class="post_content">Content</label>
+    <textarea
+      class="content"
+      name="content"
+      id="content"
+      cols="30"
+      rows="10"
+    ></textarea>
+
+    <ul style="list-style: none;">
+      <h3>Tags</h3>
+      {% for tag in tags %}
+      <li>
+        <input type="checkbox" name="tags" value="{{tag.name}}" />
+        {{tag.name}}
+      </li>
+      {%endfor%}
+    </ul>
+
+    <div id="post_submit_div">
+      <input type="submit" value="Add Post" id="post_submit" />
+    </div>
+  </form>
+
+  <form action="/users/{{user.id}}">
+    <input type="submit" id="cancelPost" value="Cancel" />
+  </form>
+</div>
+
+{% endblock %}
