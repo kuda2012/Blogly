@@ -136,7 +136,7 @@ def add_post(user_id):
     new_tags = request.form.getlist('tags')
 
     for tag in new_tags:
-        tag_id = Tag.query.filter_by(name=tag).id
+        tag_id = Tag.query.filter_by(name=tag).one_or_none()
         post.posts_tags.append(PostTag(post_id=post.id, tag_id=tag_id))
 
     db.session.commit()
